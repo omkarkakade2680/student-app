@@ -1,0 +1,23 @@
+
+<% provide(:title, @student.name) %>
+<div class="row">
+  <aside class="col-md-4">
+    <section class="student_info">
+
+      	<%= form_for Student.new do |f| %>
+  <%= link_to "Students", students_path %></br>
+    
+      	  <%= f.label :NAME  %>
+	        <%= @student.name %></br>
+	      <%= f.label :EMAIL  %>
+      		<%= @student.email %></br>
+	      <%= f.label :GENDER  %>
+		    <%= @student.gender %></br>
+	      <%= f.label :ADDRESS  %>
+		    <%= @student.address %></br>
+	      <%= f.label :COUNTRY  %>
+		    <%= @student.country %></br>
+		<% end %>
+    </section>
+  </aside>
+</div>

@@ -1,0 +1,32 @@
+<% provide(:title, 'All students') %>
+<h1>All students</h1>
+<%= link_to "New Form","/students/new" %>
+<ul class="users">
+   <table class="table table-bordered">
+	    <thead>
+	      <tr>
+	        <th>Firstname</th>
+	        <th>Email</th>
+	        <th>gender</th>
+	        <th>address</th>
+	        <th>Country</th>
+	        <th>Action</th>
+
+	      </tr>
+	    </thead>
+  		<% @students.each do |student| %>
+		    <tbody>
+		      <tr>
+		        <td><%= student.name %></td>
+		        <td><%= student.email %></td>
+		        <td><%= student.gender %></td>
+		        <td><%= student.address %></td>
+		        <td><%= student.country %></td>
+		        <td><%= link_to "Edit", edit_student_path(student) %></td>
+		        <td><%= link_to "Show", student, method: :show%></td>
+		        <td><%= button_to 'Remove', student, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+		      </tr>
+		    </tbody>
+  		<% end %>
+  </table>
+</ul>
